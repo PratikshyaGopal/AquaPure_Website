@@ -1,0 +1,138 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<!-- Hero Section -->
+<section id="home" class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+        <h1>Safe Water<br>For Healthy Life</h1>
+        <p>HOME SUPPLYES.</p>
+        <a href="#contact" class="btn">Order Now</a>
+        <a href="#features" class="btn-outline">Free Estimate</a>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section id="features" class="features">
+    <h2>A Trusted Name In Bottled Water Industry</h2>
+    <div class="feature-grid cards-with-images">
+        <div class="feature-card">
+            <img src="{{ url_for('static', filename='images/jal-sathi.png') }}" alt="Jal Sathi">
+            <h3>Community Water Leader</h3>
+            <p>Community led Water Supply Management</p>
+        </div>
+        <div class="feature-card">
+            <img src="{{ url_for('static', filename='images/smart-water.png') }}" alt="Smart Water Management">
+            <h3>Smart Water Management</h3>
+            <p>Real Time Surveillance towards Quality Water Supply</p>
+        </div>
+        <div class="feature-card">
+            <img src="{{ url_for('static', filename='images/lab-on-wheels.png') }}" alt="Lab on Wheels">
+            <h3>Lab on Wheels</h3>
+            <p>Water Quality Ensured Anytime Anywhere</p>
+        </div>
+        <div class="feature-card">
+            <img src="{{ url_for('static', filename='images/quick-response.png') }}" alt="Quick Response Team">
+            <h3>Quick Response Team</h3>
+            <p>Exclusive Mobile Crews for Incident Management</p>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about-service">
+    <h2>About Our Water Supply</h2>
+    <p>
+        At AquaPure, we deliver safe, reliable, and high-quality drinking water to homes, offices, and industrial spaces.
+        Our supply chain ensures freshness, mineral balance, and cleanliness at every step.
+    </p>
+    <p>
+        We follow a strict purification process using RO, UV, and carbon filtration technologies.
+        Our team monitors water composition daily, meeting global standards for potable water.
+    </p>
+</section>
+
+<!-- How It Works Section -->
+<section id="how" class="how-it-works">
+    <h2>How Our Water Supply System Works</h2>
+    <p>
+        Our water supply system is a carefully engineered process that ensures every drop you receive is pure, safe, and rich in essential minerals.
+        From sourcing to delivery, we follow international standards with real-time quality checks and automated infrastructure.
+    </p>
+</section>
+
+<!-- Pricing Section -->
+<section id="pricing" class="pricing-section">
+    <h2>Our Water Bottles</h2>
+    <div class="pricing-cards">
+
+        <!-- 1 Liter Bottle -->
+        <div class="pricing-card">
+            <img src="{{ url_for('static', filename='images/1l-bottle.png') }}" alt="1 Liter Bottle">
+            <h3>1 Liter Bottle</h3>
+            <p class="price">₹10</p>
+            <ul>
+                <li>✔ Freshly purified RO water</li>
+                <li>✔ Sealed for safety</li>
+                <li>✔ Ideal for daily use</li>
+            </ul>
+            <a href="#contact" class="btn">Order Now</a>
+        </div>
+
+        <!-- 20 Liter Bottle -->
+        <div class="pricing-card">
+            <img src="{{ url_for('static', filename='images/20l-bottle.png') }}" alt="20 Liter Bottle">
+            <h3>20 Liter Bottle</h3>
+            <p class="price">₹25</p>
+            <ul>
+                <li>✔ Bulk supply for homes/offices</li>
+                <li>✔ Delivered with dispenser cap</li>
+                <li>✔ Clean & reusable</li>
+            </ul>
+            <a href="#contact" class="btn">Order Now</a>
+        </div>
+
+    </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section id="why" class="why-choose-us">
+    <h2>Why Choose AquaPure?</h2>
+    <ul>
+        <li>✔ ISO-certified water purification labs</li>
+        <li>✔ On-time delivery every day</li>
+        <li>✔ Affordable packages for families and offices</li>
+        <li>✔ 24/7 customer support</li>
+        <li>✔ Trusted by 10,000+ customers</li>
+    </ul>
+</section>
+
+<!-- Contact Section with Form -->
+<section id="contact" class="contact-form styled-contact">
+    <h2>Contact / Order Form</h2>
+
+    <form action="/result" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        
+        <select name="product" required>
+            <option value="" disabled selected>Select Product</option>
+            <option value="1L Bottle">1L Bottle (₹10)</option>
+            <option value="20L Bottle">20L Bottle (₹25)</option>
+        </select>
+
+        <input type="number" name="quantity" placeholder="Quantity" min="1" required>
+
+        <textarea name="message" rows="5" placeholder="Enter Address Details (pincode , House number and Phone number ) / Order Notes(CANCELLATIONS and RETURNS not available )" required></textarea>
+        <button type="submit">Submit</button>
+    </form>
+
+    <div class="contact-box" style="margin-top: 30px;">
+        <p><strong>Phone:</strong> +91 88956 35192</p>
+        <p><strong>Email:</strong> support@aquapure.in</p>
+        <p><strong>Address:</strong> AquaPure Water Services, Plot No. 42, Industrial Estate, Bhubaneswar, Odisha - 751024</p>
+        <p><strong> NOTE :</strong>  We currently do not OFFER order CANCELLATIONS or accept RETURNS for water bottle purchases. We kindly ask that you review your order carefully before completing your purchase.</p>
+    </div>
+</section>
+
+{% endblock %}

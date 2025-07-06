@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block content %}
+<section class="admin-section">
+    <h2>Admin Panel - Order List</h2>
+    <a href="/download" class="btn-outline">📥 Download Excel</a>
+    <table border="1" cellpadding="8" cellspacing="0">
+        <thead>
+            <tr>
+                <th>ID   </th>
+                <th>Name          </th>
+                <th>Email         </th>
+                
+                <th>Product      </th>
+                <th>Qty         </th>
+                <th>Total       </th>
+                <th>Address/Order Notes</Address></th>
+                <th>Time         </th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for order in orders %}
+            <tr>
+                <td>{{ order[0] }}</td>
+                <td>{{ order[1] }}</td>
+                <td>{{ order[2] }}</td>
+                <td>{{ order[3] }}</td>
+                <td>{{ order[4] }}</td>
+                <td>₹{{ order[5] }}</td>
+                <td>{{ order[6] }}</td>
+                <td>{{ order[7] }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</section>
+{% endblock %}

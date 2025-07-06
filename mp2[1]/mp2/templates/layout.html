@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AquaPure - Water Supply Services</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">AquaPure</div>
+      <div class="menu-toggle">☰</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#features"></a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#about"></a></li>
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="#why"></a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="/admin-login" class="btn-outline"> Admin Login</a></li> <!-- 👈 Added Login Link -->
+      </ul>
+    </nav>
+  </header>
+
+  {% block content %}{% endblock %}
+
+  <footer>
+    <p>&copy; 2025 AquaPure. All rights reserved.</p>
+  </footer>
+</body>
+</html>
